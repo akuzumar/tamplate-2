@@ -600,6 +600,129 @@ END:VCARD`;
     });
 
     /**
+ * NAVIGATION SCROLL - SMOOTH & CENTER
+ */
+// Smooth scroll untuk semua link navigasi
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        
+        // Jika link adalah "#" atau kosong, scroll ke atas
+        if (targetId === '#') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
+        
+        // Jika target adalah "gift", scroll ke bagian gift
+        if (targetId === '#gift') {
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                const offset = window.innerWidth < 768 ? 80 : 100;
+                const targetPosition = targetSection.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav (dijalankan oleh scroll event listener)
+                return;
+            }
+        }
+        
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            // Hitung offset berdasarkan ukuran layar
+            const offset = window.innerWidth < 768 ? 80 : 100;
+            const targetPosition = targetSection.offsetTop - offset;
+            
+            // Scroll ke target
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Untuk mobile, scroll navbar ke kiri agar link yang aktif terlihat
+            if (window.innerWidth < 768) {
+                // Cari link yang diklik
+                const clickedLink = this;
+                
+                // Delay sedikit untuk memberi waktu scroll
+                setTimeout(() => {
+                    // Scroll navbar agar link yang diklik terlihat
+                    const nav = document.querySelector('.islamic-nav');
+                    const linkLeft = clickedLink.offsetLeft;
+                    const linkWidth = clickedLink.offsetWidth;
+                    const navWidth = nav.offsetWidth;
+                    
+                    // Hitung posisi scroll yang tepat
+                    const scrollPosition = linkLeft - (navWidth / 2) + (linkWidth / 2);
+                    
+                    nav.scrollTo({
+                        left: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }, 300);
+            }
+        }
+    });
+});
+
+// Update fungsi scroll untuk aktifkan nav (yg sudah ada)
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        // Offset untuk mobile lebih kecil
+        const offset = window.innerWidth < 768 ? 100 : 200;
+        
+        if (pageYOffset >= sectionTop - offset) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href').substring(1);
+        
+        // Handle kasus khusus untuk gift section
+        if (href === 'gift' && current === 'gift') {
+            link.classList.add('active');
+        } else if (href === current && href !== 'gift') {
+            link.classList.add('active');
+        }
+    });
+    
+    // Untuk mobile, auto-scroll navbar ke link yang aktif
+    if (window.innerWidth < 768) {
+        const activeLink = document.querySelector('.islamic-nav a.active');
+        if (activeLink) {
+            const nav = document.querySelector('.islamic-nav');
+            const linkLeft = activeLink.offsetLeft;
+            const linkWidth = activeLink.offsetWidth;
+            const navWidth = nav.offsetWidth;
+            
+            // Hitung posisi scroll yang tepat
+            const scrollPosition = linkLeft - (navWidth / 2) + (linkWidth / 2);
+            
+            nav.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
+
+    /**
      * ADDITIONAL CSS FOR DYNAMIC ELEMENTS
      */
     const style = document.createElement('style');

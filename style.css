@@ -2479,93 +2479,157 @@ img {
 
 
 
-/* === STYLE UNTUK TOMBOL BACK TO TOP & MUTE === */
 
-.back-to-top,
-.mute-button {
-  position: fixed;
-  z-index: 9999;
-  
-  /* Ukuran tombol menyesuai layar */
-  width: min(50px, 12vw);
-  height: min(50px, 12vw);
-  
-  /* Posisi dari bawah - HAPUS INI DARI SINI */
-  /* bottom: max(120px, 4vh); */ /* <-- INI DICOMMENT/HAPUS */
-  
-  /* Pusatkan konten */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* Gaya tombol */
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border-radius: 50%;
-  border: 2px solid white;
-  cursor: pointer;
-  font-size: min(20px, 5vw);
-  
-  /* Efek transisi */
-  transition: all 0.9s ease;
-  opacity: 0.9;
-}
 
-/* POSISI BACK TO TOP (tetap rendah) */
+
+
+/* ====================
+   TOMBOL MUSIC & BACK TO TOP
+   ==================== */
+
+/* Container untuk kedua tombol */
+.music-control,
 .back-to-top {
-  right: max(15px, 3vw);
-  bottom: max(160px, 4vh); /* <-- INI tetep 20px */
+    position: fixed;
+    right: 20px;
+    z-index: 9995;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* POSISI MUTE (lebih tinggi) */
-.mute-button {
-  left: max(15px, 3vw);
-  bottom: max(120px, 4vh); /* <-- INI 120px (lebih tinggi) */
+/* Back to Top - DI ATAS */
+.back-to-top {
+    bottom: 155px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-gold);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    padding: 0;
 }
 
-/* Efek hover */
-.back-to-top:hover,
-.mute-button:hover {
-  opacity: 1;
-  transform: scale(1.1);
-  background: rgba(0, 0, 0, 0.9);
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Untuk layar EXTRA kecil (HP kecil portrait) */
-@media (max-width: 360px) {
-  .back-to-top,
-  .mute-button {
-    width: 44px;
-    height: 44px;
-  }
-  
-  .back-to-top { 
-    right: 10px; 
-    bottom: 15px; /* <-- Tetap rendah */
-  }
-  
-  .mute-button { 
-    left: 10px; 
-    bottom: 100px; /* <-- Lebih tinggi di HP kecil */
-  }
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* Untuk layar BESAR (desktop) */
+/* Music Button - DI BAWAH */
+.music-control {
+    bottom: 100px;
+}
+
+.music-btn-islamic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(46, 139, 87, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--islamic-green);
+    color: var(--accent-gold-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0;
+}
+
+.music-btn-islamic:hover {
+    background: rgba(46, 139, 87, 0.4);
+    transform: scale(1.1);
+}
+
+.music-btn-islamic .tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.music-btn-islamic:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .music-control,
+    .back-to-top {
+        right: 30px;
+    }
+    
+    .music-btn-islamic,
+    .back-to-top {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .back-to-top {
+        bottom: 100px;
+    }
+    
+    .music-control {
+        bottom: 35px;
+    }
+}
+
 @media (min-width: 1024px) {
-  .back-to-top,
-  .mute-button {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-  }
+    .music-btn-islamic,
+    .back-to-top {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .back-to-top {
+        bottom: 110px;
+    }
+    
+    .music-control {
+        bottom: 40px;
+    }
+}
 
-  .back-to-top { 
-    right: 30px; 
-    bottom: 30px; /* <-- Tetap rendah */
-  }
-  
-  .mute-button { 
-    left: 30px; 
-    bottom: 100px; /* <-- Lebih tinggi di desktop */
-  }
+/* Untuk HP kecil */
+@media (max-width: 360px) {
+    .music-btn-islamic,
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .back-to-top {
+        bottom: 80px;
+    }
+    
+    .music-control {
+        bottom: 25px;
+    }
 }
