@@ -38,53 +38,92 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
 
     /**
-     * AMBIL NAMA TAMU DARI URL & FORMAT
-     */
-    function getGuestName() {
-        const urlParams = new URLSearchParams(window.location.search);
-        let name = urlParams.get('to');
+    /**
+ * AMBIL NAMA TAMU DARI URL & FORMAT
+ */
+function getGuestName() {
+    let name = '';
+    
+    // Cara 1: Dari parameter ?to= (standard)
+    const urlParams = new URLSearchParams(window.location.search);
+    name = urlParams.get('to');
+    
+    // Cara 2: Jika pakai Bitly atau format lain
+    if (!name) {
+        // Coba dari berbagai format URL
+        const url = window.location.href;
         
-        const nameDisplay = document.getElementById('guest-name-display');
-        const rsvpNameInput = document.querySelector('input[name="Nama"]');
+        // Format 1: .../?to=KHASAR
+        let match = url.match(/[?&]to=([^&]+)/);
+        if (match) {
+            name = match[1];
+        }
         
-        if (name) {
-            // Decode URL dan format nama
-            name = decodeURIComponent(name.replace(/\+/g, ' '));
-            
-            // Capitalize setiap kata
-            name = name.toLowerCase().split(' ').map(word => 
-                word.charAt(0).toUpperCase() + word.slice(1)
-            ).join(' ');
-            
-            guestName = name;
-            
-            // Tampilkan di Welcome Screen
-            nameDisplay.innerText = name;
-            
-            // Otomatis isi form RSVP
-            if (rsvpNameInput) {
-                rsvpNameInput.value = name;
-                rsvpNameInput.classList.add('valid');
-                
-                // Trigger event untuk animasi label
-                const event = new Event('input', { bubbles: true });
-                rsvpNameInput.dispatchEvent(event);
+        // Format 2: .../#to=KHASAR (hash)
+        if (!name) {
+            const hash = window.location.hash.substring(1);
+            if (hash.startsWith('to=')) {
+                name = hash.substring(3);
             }
-            
-            // Simpan nama di localStorage untuk form doa
-            localStorage.setItem('weddingGuestName', name);
-        } else {
-            // Coba dari localStorage jika ada
-            const savedName = localStorage.getItem('weddingGuestName');
-            if (savedName) {
-                nameDisplay.innerText = savedName;
-                if (rsvpNameInput) {
-                    rsvpNameInput.value = savedName;
-                    rsvpNameInput.classList.add('valid');
-                }
+        }
+        
+        // Format 3: .../KHASAR (path terakhir)
+        if (!name) {
+            const path = window.location.pathname;
+            const parts = path.split('/');
+            const lastPart = parts[parts.length - 1];
+            if (lastPart && lastPart !== 'tamplate-2' && lastPart !== 'index.html') {
+                name = lastPart;
             }
         }
     }
+    
+    const nameDisplay = document.getElementById('guest-name-display');
+    const rsvpNameInput = document.querySelector('input[name="Nama"]');
+    
+    if (name) {
+        // Decode URL
+        name = decodeURIComponent(name.replace(/\+/g, ' '));
+        
+        // Capitalize setiap kata
+        name = name.toLowerCase().split(' ').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ');
+        
+        guestName = name;
+        
+        // Tampilkan di Welcome Screen
+        nameDisplay.innerText = name;
+        
+        // Otomatis isi form RSVP
+        if (rsvpNameInput) {
+            rsvpNameInput.value = name;
+            rsvpNameInput.classList.add('valid');
+            
+            // Trigger event untuk animasi label
+            const event = new Event('input', { bubbles: true });
+            rsvpNameInput.dispatchEvent(event);
+        }
+        
+        // Simpan nama di localStorage untuk form doa
+        localStorage.setItem('weddingGuestName', name);
+        
+        // Debug log
+        console.log('Nama tamu ditemukan:', name);
+        console.log('URL:', window.location.href);
+    } else {
+        // Coba dari localStorage jika ada
+        const savedName = localStorage.getItem('weddingGuestName');
+        if (savedName) {
+            nameDisplay.innerText = savedName;
+            if (rsvpNameInput) {
+                rsvpNameInput.value = savedName;
+                rsvpNameInput.classList.add('valid');
+            }
+        }
+        console.log('Nama tidak ditemukan, pakai default');
+    }
+}
 
     // Jalankan saat halaman dimuat
     getGuestName();
