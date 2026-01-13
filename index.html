@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Undangan Pernikahan Fulan & Fulanah | بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Poppins:wght@300;400;500&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Quran Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <!-- Bismillah Overlay -->
+    <div class="bismillah-overlay">
+        <div class="bismillah-content">
+            <div class="arabic-text" style="font-family: 'Lateef', serif; font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 2rem;">
+                بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+            </div>
+            <p class="subtitle">Dengan menyebut nama Allah yang Maha Pengasih lagi Maha Penyayang</p>
+        </div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-islamic">
+        <div class="welcome-pattern"></div>
+        <div class="welcome-content" data-aos="zoom-in">
+            <div class="arabic-decorative">ن</div>
+            <p class="invitation-label">Undangan Pernikahan</p>
+            <h1 class="arabic-title" style="font-family: 'Amiri', serif;">فلان و فلانة</h1>
+            <div class="divider-ornament">
+                <span class="star"><i class="fas fa-star"></i></span>
+                <span class="circle"></span>
+                <span class="star"><i class="fas fa-star"></i></span>
+            </div>
+            <h1 class="title-font">Fulan & Fulanah</h1>
+            
+            <div class="guest-info">
+                <p class="arabic-subtitle" style="font-family: 'Lateef', serif;">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h2 id="guest-name-display">Tamu Undangan</h2>
+            </div>
+
+            <button id="btn-open" class="btn-islamic">
+                <i class="fas fa-mosque"></i> Buka Undangan <i class="fas fa-mosque"></i>
+            </button>
+            
+            <div class="welcome-note">
+                <p><i class="fas fa-hands-praying"></i> Mohon maaf jika ada kesalahan penulisan nama/gelar</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Control -->
+    <div class="music-control">
+        <button id="music-btn" class="music-btn-islamic">
+            <i class="fas fa-volume-up"></i>
+            <span class="tooltip">Putar/Pause Musik</span>
+        </button>
+        <audio id="bg-music" loop>
+            <source src="1.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- Islamic Navigation -->
+    <nav class="islamic-nav">
+        <a href="#home" class="active"><i class="fas fa-home"></i><span>Beranda</span></a>
+        <a href="#mempelai"><i class="fas fa-heart"></i><span>Mempelai</span></a>
+        <a href="#acara"><i class="fas fa-calendar-alt"></i><span>Acara</span></a>
+        <a href="#doa"><i class="fas fa-hands-praying"></i><span>Doa</span></a>
+        <a href="#gallery"><i class="fas fa-images"></i><span>Galeri</span></a>
+        <a href="#rsvp"><i class="fas fa-envelope"></i><span>Konfirmasi</span></a>
+        <a href="#gift"><i class="fas fa-gift"></i><span>Amplop</span></a>
+    </nav>
+
+    <!-- Floating Tasbih -->
+    <div class="floating-tasbih">
+        <div class="tasbih-bead"></div>
+        <div class="tasbih-bead"></div>
+        <div class="tasbih-bead"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-islamic">
+        <div class="islamic-pattern-overlay"></div>
+        <div class="moon-decoration"></div>
+        <div class="hero-text">
+            <p class="arabic-opening" style="font-family: 'Amiri', serif;">وَأَنْكِحُوا الْأَيَامَىٰ مِنْكُمْ</p>
+            <p class="opening-text">"Dan nikahkanlah orang-orang yang sendirian di antara kamu"</p>
+            <div class="divider-mosque">
+                <i class="fas fa-mosque"></i>
+                <div class="line"></div>
+                <i class="fas fa-mosque"></i>
+            </div>
+            <h1 class="title-arabic" style="font-family: 'Scheherazade New', serif;">زُمَر وَڤانيسا</h1>
+            <div class="and-symbol-arabic" style="font-family: 'Lateef', serif;">و</div>
+            <h1 class="title-arabic" style="font-family: 'Scheherazade New', serif;">فلانة بنت فلان</h1>
+            
+            <div class="wedding-date">
+                <div class="hijri-date">
+                    <i class="fas fa-moon"></i>
+                    <span>10 Rajab 1448 H</span>
+                </div>
+                
+                <div class="gregorian-date">
+                    <i class="fas fa-calendar"></i>
+                    <span>08 Desember 2026</span>
+                </div>
+            </div>
+
+            <div id="countdown" class="countdown-islamic">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <small>Hari</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <small>Jam</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <small>Menit</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <small>Detik</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-hint">
+            <span class="scroll-text">Geser ke bawah</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ayat Quran Section -->
+    <section class="ayat-section">
+        <div class="container" data-aos="fade-up">
+            <div class="ayat-header">
+                <div class="ayat-number">٢١</div>
+                <div class="surah-name">سورة الروم</div>
+            </div>
+            <div class="ayat-content">
+                <p class="arabic-ayat" style="font-family: 'Lateef', serif;">
+                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+                </p>
+                <div class="ayat-translation">
+                    <p>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-isti dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
+                    <div class="verse-info">
+                        <span class="verse-reference">QS. Ar-Rum (30): 21</span>
+                        <span class="juz-info">Juz 21</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mempelai Section -->
+    <section id="mempelai" class="mempelai-section">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title-arabic" style="font-family: 'Amiri', serif;">العروسان</h2>
+            <p class="section-subtitle">Mempelai Pengantin</p>
+        </div>
+
+        <div class="couple-container-islamic">
+            <!-- Mempelai Pria -->
+            <div class="couple-card-islamic groom-card" data-aos="fade-right">
+                <div class="card-ornament-top"></div>
+                <div class="couple-image-container">
+                    <div class="image-frame">
+                        <img src="pengantinpria.jpg" alt="Fulan" class="couple-image" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="arabic-name" style="font-family: 'Lateef', serif;">فلان</div>
+                        </div>
+                    </div>
+                    <div class="islamic-design left-design"></div>
+                </div>
+                <div class="couple-details">
+                    <h3>Fulan bin Fulan</h3>
+                    <p class="parents">Putra pertama dari</p>
+                    <p class="parents-name">Bapak Fulan & Ibu Fulanah</p>
+                    
+                    <div class="couple-bio">
+                        <p><i class="fas fa-graduation-cap"></i> S1 Teknik Informatika, Universitas Indonesia</p>
+                        <p><i class="fas fa-briefcase"></i> Software Engineer di Tech Company</p>
+                        <p><i class="fas fa-book-quran"></i> Pengajar Tahsin Masjid Al-Ikhlas</p>
+                    </div>
+                    
+                    <div class="socials-islamic">
+                        <a href="https://wa.me/6285161808524" class="social-btn whatsapp" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Hubungi
+                        </a>
+                        <a href="https://instagram.com" class="social-btn instagram" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Ornament -->
+            <div class="middle-ornament" data-aos="zoom-in">
+                <div class="heart-container">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <p class="union-text">Berkat ridho Allah SWT</p>
+            </div>
+
+            <!-- Mempelai Wanita -->
+            <div class="couple-card-islamic bride-card" data-aos="fade-left">
+                <div class="card-ornament-top"></div>
+                <div class="couple-image-container">
+                    <div class="image-frame">
+                        <img src="mempelaiwanita.jpg" alt="Fulanah" class="couple-image" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="arabic-name" style="font-family: 'Lateef', serif;">فلانة</div>
+                        </div>
+                    </div>
+                    <div class="islamic-design right-design"></div>
+                </div>
+                <div class="couple-details">
+                    <h3>Fulanah binti Fulan</h3>
+                    <p class="parents">Putri kedua dari</p>
+                    <p class="parents-name">Bapak Fulan & Ibu Fulanah</p>
+                    
+                    <div class="couple-bio">
+                        <p><i class="fas fa-graduation-cap"></i> S1 Psikologi, Universitas Negeri Jakarta</p>
+                        <p><i class="fas fa-briefcase"></i> Konselor Pendidikan</p>
+                        <p><i class="fas fa-book-quran"></i> Pengajar TPQ Al-Hikmah</p>
+                    </div>
+                    
+                    <div class="socials-islamic">
+                        <a href="https://wa.me/6285161808524" class="social-btn whatsapp" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Hubungi
+                        </a>
+                        <a href="https://instagram.com" class="social-btn instagram" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acara Section -->
+    <section id="acara" class="acara-section">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title-arabic" style="font-family: 'Amiri', serif;">المناسبة</h2>
+            <p class="section-subtitle">Jadwal Acara</p>
+        </div>
+
+        <div class="timeline-islamic">
+            <!-- Akad Nikah -->
+            <div class="timeline-item-islamic" data-aos="fade-up">
+                <div class="timeline-marker">
+                    <div class="marker-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="event-header">
+                        <h3><i class="fas fa-handshake"></i> Akad Nikah</h3>
+                        <span class="event-badge">Wajib</span>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="far fa-calendar"></i>
+                            <div>
+                                <p class="detail-label">Hari & Tanggal</p>
+                                <p class="detail-value">Minggu, 08 Desember 2026</p>
+                                <p class="hijri-value">10 Rajab 1448 H</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <p class="detail-label">Waktu</p>
+                                <p class="detail-value">08:00 - 10:00 WIB</p>
+                                <p class="prayer-time">Setelah Shubuh</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p class="detail-label">Lokasi</p>
+                                <p class="detail-value">Masjid Agung Al-Ittihad</p>
+                                <p class="location-address">Jl. Kebayoran Baru, Jakarta Selatan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://maps.app.goo.gl/6xT1Ze4Yc5dsaFsN6" target="_blank" class="btn-location" rel="noopener">
+                            <i class="fas fa-directions"></i> Petunjuk Lokasi
+                        </a>
+                        <a href="#rsvp" class="btn-rsvp">
+                            <i class="fas fa-check-circle"></i> Konfirmasi Hadir
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resepsi -->
+            <div class="timeline-item-islamic" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-marker">
+                    <div class="marker-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="event-header">
+                        <h3><i class="fas fa-champagne-glasses"></i> Resepsi Pernikahan</h3>
+                        <span class="event-badge sunnah">Sunnah</span>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="far fa-calendar"></i>
+                            <div>
+                                <p class="detail-label">Hari & Tanggal</p>
+                                <p class="detail-value">Minggu, 08 Desember 2026</p>
+                                <p class="hijri-value">10 Rajab 1448 H</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <p class="detail-label">Waktu</p>
+                                <p class="detail-value">11:00 - 14:00 WIB</p>
+                                <p class="prayer-time">Sebelum Dzuhur</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p class="detail-label">Lokasi</p>
+                                <p class="detail-value">Grand Ballroom Luxury Ritz</p>
+                                <p class="location-address">Jl. Thamrin, Jakarta Pusat</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <a href="https://maps.app.goo.gl/PKonUGDYJZX383qG8" target="_blank" class="btn-location" rel="noopener">
+                            <i class="fas fa-directions"></i> Petunjuk Lokasi
+                        </a>
+                        <button class="btn-waze" type="button">
+                            <i class="fab fa-waze"></i> Buka di Waze
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-notes" data-aos="fade-up">
+            <div class="note-item">
+                <i class="fas fa-info-circle"></i>
+                <p>Acara akan dilaksanakan dengan protokol kesehatan dan mengikuti sunnah Nabi</p>
+            </div>
+            <div class="note-item">
+                <i class="fas fa-people-arrows"></i>
+                <p>Terdapat tempat duduk terpisah untuk ikhwan dan akhwat</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doa Section -->
+    <section id="doa" class="doa-section">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title-arabic" style="font-family: 'Amiri', serif;">الدعاء</h2>
+            <p class="section-subtitle">Kirim Doa & Ucapan</p>
+        </div>
+
+        <div class="doa-container" data-aos="zoom-in">
+            <div class="doa-card">
+                <div class="doa-header">
+                    <i class="fas fa-hands-praying"></i>
+                    <h3>Doa Untuk Pengantin</h3>
+                </div>
+                <div class="doa-content">
+                    <p class="arabic-doa" style="font-family: 'Lateef', serif;">
+                        بَارَكَ اللَّهُ لَكَ، وَبَارَكَ عَلَيْكَ، وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+                    </p>
+                    <p class="doa-translation">
+                        "Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta mengumpulkan kalian berdua dalam kebaikan."
+                    </p>
+                    <p class="doa-source">(HR. Abu Dawud, Tirmidzi, dan lainnya)</p>
+                </div>
+                <button class="btn-copy-doa" onclick="copyDoa()" type="button">
+                    <i class="far fa-copy"></i> Salin Doa
+                </button>
+            </div>
+
+            <div class="doa-form">
+                <div class="form-header">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>Tulis Ucapan & Doa</h3>
+                </div>
+                <form id="doaForm">
+                    <div class="form-group">
+                        <input type="text" id="doaName" placeholder="Nama Anda" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="doaMessage" placeholder="Tulis doa dan ucapan terbaik Anda..." rows="4" required></textarea>
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <button type="submit" class="btn-send-doa">
+                        <i class="fas fa-paper-plane"></i> Kirim Doa
+                    </button>
+                </form>
+                <div class="form-note">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Doa Anda akan dibacakan khusus untuk pengantin</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="doa-gallery" data-aos="fade-up">
+            <h4><i class="fas fa-comments"></i> Ucapan Terkini</h4>
+            <div class="messages-container">
+                <!-- Messages will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section-islamic">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title-arabic" style="font-family: 'Amiri', serif;">الصور</h2>
+            <p class="section-subtitle">Galeri Kenangan</p>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="1.jpeg" alt="Pre-Wedding 1" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">
+                        <h4>Quran Session</h4>
+                        <p>Mempelai membaca Al-Quran bersama</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="2.jpg" alt="Pre-Wedding 2" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">
+                        <h4>Masjid Moment</h4>
+                        <p>Di pelataran Masjid Istiqlal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="300">
+                <img src="3.jpg" alt="Pre-Wedding 3" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">
+                        <h4>Islamic Architecture</h4>
+                        <p>Latar belakang kaligrafi islami</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                <img src="4.jpg" alt="Pre-Wedding 4" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">
+                        <h4>Family Blessing</h4>
+                        <p>Restu dari orang tua</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                <img src="5.jpg" alt="Pre-Wedding 5" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">
+                        <h4>Prayer Together</h4>
+                        <p>Shalat berjamaah pertama</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                <img src="6.jpg" alt="Pre-Wedding 6" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">
+                        <h4>Islamic Pattern</h4>
+                        <p>Motif islami klasik</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section-islamic">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title-arabic" style="font-family: 'Amiri', serif;">التأكيد</h2>
+            <p class="section-subtitle">Konfirmasi Kehadiran</p>
+        </div>
+
+        <div class="rsvp-container" data-aos="zoom-in">
+            <div class="rsvp-card">
+                <div class="rsvp-header">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Konfirmasi Kehadiran</h3>
+                    <p>Demi kenyamanan dan kelancaran acara, mohon konfirmasi kehadiran Anda</p>
+                </div>
+
+                <form id="rsvpForm">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <input type="text" name="Nama" value="" required>
+                            <label>Nama Lengkap</label>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="Jumlah" min="1" max="10" required>
+                            <label>Jumlah Orang</label>
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="Kehadiran" required>
+                            <option value="" disabled selected>Pilih Konfirmasi Kehadiran</option>
+                            <option value="Hadir">Hadir (Insha Allah)</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                            <option value="Ragu">Masih Ragu</option>
+                        </select>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="Acara" required>
+                            <option value="" disabled selected>Acara yang akan dihadiri</option>
+                            <option value="Akad">Akad Nikah saja</option>
+                            <option value="Resepsi">Resepsi saja</option>
+                            <option value="Keduanya">Keduanya (Akad & Resepsi)</option>
+                        </select>
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="Pesan" placeholder="Tulis pesan dan doa untuk pengantin..." required></textarea>
+                        <i class="fas fa-pen"></i>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="btn-submit-islamic">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Kirim Konfirmasi</span>
+                        </button>
+                        <button type="button" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Konfirmasi via WhatsApp
+                        </button>
+                    </div>
+                </form>
+
+                <div class="rsvp-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Konfirmasi melalui WhatsApp hanya untuk tamu yang mendesak</p>
+                </div>
+            </div>
+
+            <div class="rsvp-stats" data-aos="fade-left">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalGuests">0</div>
+                    <div class="stat-label">Tamu Terkonfirmasi</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="attendingGuests">0</div>
+                    <div class="stat-label">Akan Hadir</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="maybeGuests">0</div>
+                    <div class="stat-label">Masih Ragu</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Section -->
+    <section id="gift" class="gift-section-islamic">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title-arabic" style="font-family: 'Amiri', serif;">الهدية</h2>
+            <p class="section-subtitle">Amplop Digital</p>
+        </div>
+
+        <div class="gift-message" data-aos="fade-up">
+            <i class="fas fa-hands-holding-heart"></i>
+            <p>Doa dan restu Anda adalah hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui:</p>
+        </div>
+
+        <div class="bank-cards-container">
+            <!-- Bank 1 -->
+            <div class="bank-card-islamic" data-aos="flip-left">
+                <div class="card-header">
+                    <div class="bank-logo">
+                        <img src="BSI.jpg" alt="Bank Syariah Indonesia" loading="lazy">
+                    </div>
+                    <div class="card-type">
+                        <i class="fas fa-universal-access"></i> Syariah
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-number-container">
+                        <div class="card-number">1234 5678 9012 3456</div>
+                        <button class="btn-copy" onclick="copyBankNumber('1234567890123456', 'BSI')" type="button">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="card-details">
+                        <div class="card-holder">
+                            <p class="label">Atas Nama</p>
+                            <h4>FULAN BIN FULAN</h4>
+                        </div>
+                        <div class="card-expiry">
+                            <p class="label">Bank</p>
+                            <p class="value">Bank Syariah Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="qr-code">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Tersedia QRIS</span>
+                    </div>
+                    <button class="btn-save" onclick="saveToContacts('Fulan', '1234567890123456', 'BSI')" type="button">
+                        <i class="fas fa-save"></i> Simpan Kontak
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bank 2 -->
+            <div class="bank-card-islamic" data-aos="flip-right" data-aos-delay="200">
+                <div class="card-header">
+                    <div class="bank-logo">
+                        <img src="mandiri.jpg" alt="Bank Mandiri" loading="lazy">
+                    </div>
+                    <div class="card-type">
+                        <i class="fas fa-female"></i> Untuk Mempelai Wanita
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-number-container">
+                        <div class="card-number">0987 6543 2109 8765</div>
+                        <button class="btn-copy" onclick="copyBankNumber('0987654321098765', 'Mandiri')" type="button">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="card-details">
+                        <div class="card-holder">
+                            <p class="label">Atas Nama</p>
+                            <h4>FULANAH BINTI FULAN</h4>
+                        </div>
+                        <div class="card-expiry">
+                            <p class="label">Bank</p>
+                            <p class="value">Bank Mandiri Syariah</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="qr-code">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Tersedia QRIS</span>
+                    </div>
+                    <button class="btn-transfer" onclick="openTransferApp('0987654321098765', 'Mandiri')" type="button">
+                        <i class="fas fa-exchange-alt"></i> Transfer Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gift-notes" data-aos="fade-up">
+            <div class="note-item">
+                <i class="fas fa-lightbulb"></i>
+                <p>Gunakan fitur QRIS untuk transfer yang lebih mudah</p>
+            </div>
+            <div class="note-item">
+                <i class="fas fa-hand-holding-usd"></i>
+                <p>Segala bentuk pemberian akan digunakan untuk membangun rumah tangga sakinah</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="islamic-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="arabic-monogram" style="font-family: 'Lateef', serif;">ف ف</div>
+                <h3>Fulan & Fulanah</h3>
+            </div>
+            
+            <div class="footer-verse">
+                <p class="arabic-verse" style="font-family: 'Amiri', serif;">
+                    رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+                </p>
+                <p>"Ya Tuhan kami, anugerahkanlah kepada kami pasangan kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa."</p>
+                <p class="verse-ref">QS. Al-Furqan (25): 74</p>
+            </div>
+
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <p>Fulan (Mempelai Pria)</p>
+                        <a href="tel:+6285161808524">+62 851-6180-8524</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-user"></i>
+                    <div>
+                        <p>Fulanah (Mempelai Wanita)</p>
+                        <a href="tel:+6285161808524">+62 851-6180-8524</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <p>Panitia Pernikahan</p>
+                        <a href="tel:+6285161808524">+62 851-6180-8524</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>© 1448 H / 2026 M - Undangan Pernikahan Islami</p>
+                <p class="creator">Dibuat dengan <i class="fas fa-heart"></i> & <i class="fas fa-pray"></i> untuk keberkahan</p>
+                <br><br><br>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
